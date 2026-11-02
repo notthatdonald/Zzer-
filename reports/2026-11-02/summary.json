@@ -1,6 +1,6 @@
 {
  "date": "2026-11-02",
- "generated_at": "2026-11-02T20:07:13.438668+00:00",
+ "generated_at": "2026-11-02T21:07:28.353243+00:00",
  "site_total": 112685,
  "scraped": 112685,
  "brands": 95,
@@ -1354,6 +1354,247 @@
    "image_url": "https://img.goshare2.com/product-images/202408/1723192170-24080678814573-1.jpeg"
   }
  ],
- "models": [],
+ "models": [
+  {
+   "brand": "Gucci",
+   "model": "GG Marmont",
+   "skus": 2031,
+   "median_price_cny": 4999.0,
+   "median_retail_cny": 15900.0,
+   "median_discount_pct": 65.6
+  },
+  {
+   "brand": "Louis Vuitton (LV)",
+   "model": "Speedy",
+   "skus": 853,
+   "median_price_cny": 8999.0,
+   "median_retail_cny": 15100.0,
+   "median_discount_pct": 40.0
+  },
+  {
+   "brand": "Dior",
+   "model": "Lady Dior戴妃包",
+   "skus": 837,
+   "median_price_cny": 14080.0,
+   "median_retail_cny": 39800.0,
+   "median_discount_pct": 64.8
+  },
+  {
+   "brand": "Gucci",
+   "model": "Ophidia",
+   "skus": 816,
+   "median_price_cny": 4400.0,
+   "median_retail_cny": 13850.0,
+   "median_discount_pct": 64.5
+  },
+  {
+   "brand": "Tory Burch",
+   "model": "T Monogram系列",
+   "skus": 814,
+   "median_price_cny": 1690.0,
+   "median_retail_cny": 4790.0,
+   "median_discount_pct": 65.2
+  },
+  {
+   "brand": "Coach",
+   "model": "City",
+   "skus": 798,
+   "median_price_cny": 1399.0,
+   "median_retail_cny": 3600.0,
+   "median_discount_pct": 61.2
+  },
+  {
+   "brand": "Gucci",
+   "model": "Dionysus酒神包",
+   "skus": 795,
+   "median_price_cny": 3888.0,
+   "median_retail_cny": 17000.0,
+   "median_discount_pct": 74.9
+  },
+  {
+   "brand": "Tory Burch",
+   "model": "Kira",
+   "skus": 762,
+   "median_price_cny": 1688.0,
+   "median_retail_cny": 5990.0,
+   "median_discount_pct": 69.1
+  },
+  {
+   "brand": "Tumi",
+   "model": "Alpha Bravo系列",
+   "skus": 699,
+   "median_price_cny": 2273.0,
+   "median_retail_cny": 4500.0,
+   "median_discount_pct": 49.5
+  },
+  {
+   "brand": "Tory Burch",
+   "model": "Fleming",
+   "skus": 685,
+   "median_price_cny": 1660.0,
+   "median_retail_cny": 5990.0,
+   "median_discount_pct": 73.8
+  },
+  {
+   "brand": "Bottega Veneta",
+   "model": "Cassette",
+   "skus": 613,
+   "median_price_cny": 4800.0,
+   "median_retail_cny": 18900.0,
+   "median_discount_pct": 74.9
+  },
+  {
+   "brand": "Gucci",
+   "model": "1955",
+   "skus": 593,
+   "median_price_cny": 6990.0,
+   "median_retail_cny": 25000.0,
+   "median_discount_pct": 67.4
+  },
+  {
+   "brand": "Coach",
+   "model": "Rowan",
+   "skus": 561,
+   "median_price_cny": 1599.0,
+   "median_retail_cny": 3400.0,
+   "median_discount_pct": 53.0
+  },
+  {
+   "brand": "Coach",
+   "model": "Tabby",
+   "skus": 559,
+   "median_price_cny": 1820.0,
+   "median_retail_cny": 4750.0,
+   "median_discount_pct": 61.4
+  },
+  {
+   "brand": "Louis Vuitton (LV)",
+   "model": "Onthego",
+   "skus": 558,
+   "median_price_cny": 12593.5,
+   "median_retail_cny": 25200.0,
+   "median_discount_pct": 51.4
+  },
+  {
+   "brand": "Dior",
+   "model": "Saddle马鞍包",
+   "skus": 548,
+   "median_price_cny": 6899.5,
+   "median_retail_cny": 21000.0,
+   "median_discount_pct": 64.8
+  },
+  {
+   "brand": "Michael Kors (MK)",
+   "model": "Mercer",
+   "skus": 546,
+   "median_price_cny": 700.0,
+   "median_retail_cny": 4700.0,
+   "median_discount_pct": 85.1
+  },
+  {
+   "brand": "Louis Vuitton (LV)",
+   "model": "Neverfull",
+   "skus": 525,
+   "median_price_cny": 8099.0,
+   "median_retail_cny": 15100.0,
+   "median_discount_pct": 46.8
+  },
+  {
+   "brand": "Saint Laurent",
+   "model": "Niki",
+   "skus": 512,
+   "median_price_cny": 9988.0,
+   "median_retail_cny": 24250.0,
+   "median_discount_pct": 57.8
+  },
+  {
+   "brand": "Tory Burch",
+   "model": "Lee Radziwill",
+   "skus": 508,
+   "median_price_cny": 1599.0,
+   "median_retail_cny": 8990.0,
+   "median_discount_pct": 82.0
+  },
+  {
+   "brand": "Coach",
+   "model": "Dempsey",
+   "skus": 485,
+   "median_price_cny": 1399.0,
+   "median_retail_cny": 4950.0,
+   "median_discount_pct": 73.1
+  },
+  {
+   "brand": "Balenciaga",
+   "model": "Hourglass沙漏包",
+   "skus": 483,
+   "median_price_cny": 5800.0,
+   "median_retail_cny": 19900.0,
+   "median_discount_pct": 67.9
+  },
+  {
+   "brand": "Louis Vuitton (LV)",
+   "model": "Alma",
+   "skus": 419,
+   "median_price_cny": 6499.0,
+   "median_retail_cny": 16000.0,
+   "median_discount_pct": 60.9
+  },
+  {
+   "brand": "Tumi",
+   "model": "Alpha",
+   "skus": 412,
+   "median_price_cny": 3509.0,
+   "median_retail_cny": 6500.0,
+   "median_discount_pct": 47.0
+  },
+  {
+   "brand": "Chanel",
+   "model": "Gabrielle流浪包",
+   "skus": 388,
+   "median_price_cny": 12650.0,
+   "median_retail_cny": 47300.0,
+   "median_discount_pct": 70.3
+  },
+  {
+   "brand": "Hermes",
+   "model": "Picotin菜篮子包",
+   "skus": 387,
+   "median_price_cny": 19200.0,
+   "median_retail_cny": 32000.0,
+   "median_discount_pct": 39.6
+  },
+  {
+   "brand": "Louis Vuitton (LV)",
+   "model": "Keepall",
+   "skus": 379,
+   "median_price_cny": 13999.0,
+   "median_retail_cny": 21600.0,
+   "median_discount_pct": 33.5
+  },
+  {
+   "brand": "Dior",
+   "model": "Book Tote",
+   "skus": 376,
+   "median_price_cny": 9000.0,
+   "median_retail_cny": 26000.0,
+   "median_discount_pct": 64.4
+  },
+  {
+   "brand": "Tory Burch",
+   "model": "Eleanor",
+   "skus": 376,
+   "median_price_cny": 2324.0,
+   "median_retail_cny": 7290.0,
+   "median_discount_pct": 68.2
+  },
+  {
+   "brand": "Bvlgari",
+   "model": "Serpenti Forever蛇头包",
+   "skus": 374,
+   "median_price_cny": 4500.0,
+   "median_retail_cny": 25650.0,
+   "median_discount_pct": 80.9
+  }
+ ],
  "changes": null
 }
