@@ -2,3 +2,10 @@ node_modules/
 __pycache__/
 *.pyc
 logs/
+# large/derived files: compressed copies are committed instead
+data/snapshots/*/handbags.jsonl
+data/snapshots/*/*.tmp
+reports/*/handbags.csv
+# rebuilt from snapshots with: python3 analysis/analyze.py --all
+data/zzer.sqlite
+data/details/

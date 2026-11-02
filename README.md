@@ -46,7 +46,12 @@ node scraper/details.js
 
 # 3. build reports + update price history
 python3 analysis/analyze.py                  # writes reports/<date>/ and data/zzer.sqlite
+python3 analysis/analyze.py --all            # rebuild every report + full price history from all snapshots
 ```
+
+Raw snapshots are committed gzipped (`handbags.jsonl.gz`); the analysis reads
+either form. `data/zzer.sqlite` isn't committed: it is rebuilt from the
+snapshots with `--all`. Commit each new snapshot's `.gz` so history is kept.
 
 Requires Node 18+ with `playwright` (Chromium) and Python 3 with `pandas` and `openpyxl`.
 
@@ -60,8 +65,9 @@ snapshot to `price_history` in `data/zzer.sqlite`, and the report gains a
   gender / colour / location, models, condition and type summaries,
   discount bands, deepest discounts, price changes, and every handbag.
 - `brand_summary.csv` – SKUs, share, price and discount stats per brand.
-- `handbags.csv` – one row per handbag with every field.
-- `summary.json` – headline numbers used by the dashboard.
+- `handbags.csv.gz` – one row per handbag with every field (gzipped CSV).
+- `summary.json` – headline numbers.
+- `dashboard/*.csv` – small tables behind the ZZER Handbag Tracker dashboard.
 
 `data/zzer.sqlite` tables: `listings` (every bag ever seen, with first/last
 seen dates), `price_history` (price per bag per snapshot), `facets`

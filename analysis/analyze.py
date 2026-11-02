@@ -43,8 +43,13 @@ def latest_date():
 
 
 def load_jsonl(path):
+    import gzip
+    path = Path(path)
+    if not path.exists() and path.with_name(path.name + ".gz").exists():
+        path = path.with_name(path.name + ".gz")
     rows = []
-    with open(path, encoding="utf-8") as f:
+    opener = gzip.open if path.suffix == ".gz" else open
+    with opener(path, "rt", encoding="utf-8") as f:
         for line in f:
             if line.strip():
                 rows.append(json.loads(line))
@@ -222,8 +227,8 @@ def summaries(df):
     def pivot(col):
         if col not in df or df[col].isna().all():
             return pd.DataFrame()
-        s = df.assign(**{col: df[col].fillna("(unknown)").str.split(r" \| ")}).explode(col)
-        return pd.crosstab(s["brand"], s[col]).loc[brand.index]
+        s = df.assign(**{col: df[col].fillna("(unknown)").str.split(r" \| ")}).explode(col).reset_index(drop=True)
+        return pd.crosstab(s["brand"], s[col]).reindex(brand.index, fill_value=0)
 
     cond_order = ["New", "Unused", "9.9", "9.8", "9.5", "9.3", "9.0", "8.5", "8.0", "7.0"]
     cond = df.groupby("condition").agg(skus=("id", "size"), median_price_cny=("price_cny", "median"),
@@ -234,7 +239,7 @@ def summaries(df):
     bands = pd.cut(df["discount_pct"], [-1000, 0, 25, 50, 60, 70, 80, 90, 100],
                    labels=["≤0% (at/above retail)", "0–25%", "25–50%", "50–60%", "60–70%", "70–80%", "80–90%", "90%+"])
     disc_bands = bands.value_counts().sort_index().rename("skus").to_frame()
-    brand_cond = pd.crosstab(df["brand"], df["condition"]).loc[brand.index]
+    brand_cond = pd.crosstab(df["brand"], df["condition"]).reindex(brand.index, fill_value=0)
     brand_cond = brand_cond[[c for c in cond_order if c in brand_cond.columns] + [c for c in brand_cond.columns if c not in cond_order]]
     brand_sub = pivot("subcategory")
     models = None
@@ -286,8 +291,16 @@ def export_dashboard(df, brand, cond, sub, bands, brand_cond, models, deepest, c
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--date")
+    ap.add_argument("--all", action="store_true", help="rebuild reports + price history for every snapshot, oldest first")
     a = ap.parse_args()
-    date = a.date or latest_date()
+    if a.all:
+        for d in sorted(x.name for x in SNAP.iterdir() if x.is_dir() and x.name[:2] == "20"):
+            run(d)
+        return
+    run(a.date or latest_date())
+
+
+def run(date):
     out = ROOT / "reports" / date
     out.mkdir(parents=True, exist_ok=True)
 
@@ -297,7 +310,7 @@ def main():
     changes = price_changes(con, date)
     brand, cond, sub, bands, brand_cond, brand_sub, brand_gender, brand_color, brand_loc, models = summaries(df)
 
-    df.drop(columns=[c for c in ["subcategories"] if c in df]).to_csv(out / "handbags.csv", index=False, encoding="utf-8-sig")
+    df.drop(columns=[c for c in ["subcategories"] if c in df]).to_csv(out / "handbags.csv.gz", index=False, encoding="utf-8-sig")
     brand.to_csv(out / "brand_summary.csv", encoding="utf-8-sig")
 
     deepest = df[df["retail_cny"] >= 3000].sort_values("discount_pct", ascending=False).head(500)
